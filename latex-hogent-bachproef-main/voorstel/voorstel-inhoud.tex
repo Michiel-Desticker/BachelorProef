@@ -3,70 +3,45 @@
 \section{Introductie}%
 \label{sec:introductie}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+In een tijdperk waarin cloudtechnologieën en snelle, efficiënte implementatieprocessen essentieel zijn geworden, onderzoekt deze bachelorproef de optimale inzet van 'Infrastructure as Code' (IaC) tools, specifiek Ansible en Terraform, binnen IT-infrastructuurbeheer. Deze studie richt zich op IT-professionals die actief betrokken zijn bij het beheer en de ontwikkeling van infrastructuur. Deze gerichte doelgroep omvat systeembeheerders, DevOps-ingenieurs en IT-managers die streven naar het verbeteren van hun infrastructuurbeheerprocessen.
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
+De centrale onderzoeksvraag luidt: "Hoe kunnen Ansible en Terraform effectief worden geïntegreerd in infrastructuurbeheer om de efficiëntie en operationele capaciteit te maximaliseren?" Deze vraag is bedoeld om de praktische toepassingen, voordelen, en synergieën van Ansible en Terraform in detail te onderzoeken.
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+Het doel van deze studie is tweeledig. Ten eerste is het gericht op het creëren van een gedetailleerd rapport met aanbevelingen, dat concrete strategieën en best practices biedt voor de implementatie van deze IaC tools. Ten tweede streeft het onderzoek naar het ontwikkelen van een proof-of-concept, dat de effectiviteit van de geïdentificeerde strategieën in een realistische omgeving demonstreert.
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
+Het succes van deze bachelorproef zal worden gemeten aan de hand van de relevantie en bruikbaarheid van de aanbevelingen voor de specifieke doelgroep. Het eindresultaat moet IT-professionals in staat stellen hun cloudinfrastructuur efficiënter en effectiever te beheren, wat uiteindelijk zal leiden tot verbeterde operationele prestaties en concurrentievoordeel binnen hun respectievelijke industrieën.
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+\subsection{Infrastructure as Code: een evolueren landschap}
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+Infrastructure as Code (IaC) heeft als doel om infrastuur te beheren met behulp van code, waarbij de klassieke manuele manier van infrastructuurbeheer niet meer gevolgd wordt. Deze verschuiving wordt grotendeels gedreven door twee cruciale ontwikkelingen in het IT-landschap: de steeds groter wordende vraag naar snelle implementatie en de opkomst van cloudcomputing (https://doi.org/10.1109/icsme.2019.00092) . 
+Binnen IT is er altijd een nood aan snelheid. Bedrijven willen zo snel mogelijk nieuwe releases of producten uitbrengen, om te voldoen aan de noden van de klanten en te overleven in een snel veranderend landschap. Infrastructure as Code is een hulpmiddel om aan deze nood te voldoen. Met behulp van templates is het niet meer noodzakelijk om de hele configuratie van de servers en besturingssystemen te wijzigen wanneer een nieuwe applicatie ontwikkeld of gereleased wordt. Als bijvoorbeeld enkele servers moeten geüpdated worden, is het veel tijdsintensiever om deze updates één voor één handmatig toe te passen. Infrastructure as Code maakt het mogelijk om deze systemen met een simple declaratieve of imperatieve syntax automatisch te ‘provisioneren’.
+De verdere evolutie van virtualisatie en de cloud heeft ertoe geleid dat infrastructuur is geëvolueerd  naar software en data (https://doi.org/10.1109/ms.2017.13). Hierdoor is infrastructuur gemakkelijker te beheren en kunnen snel veranderingen op grotere schaal worden aangebracht. Systeembeheerders hebben nu de mogelijkheid om systemen te ontwikkelen die het beheer en de configuratie van infrastructuur makkelijker en dynamischer maakt. (https://doi.org/10.1109/ms.2017.13 )
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+\subsection{Ansible en Terraform}
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
-
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
-
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
-
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+Ansible en Terraform zijn twee voorbeelden van Infrastructure as Code tools. Ansible gebruikt eenvoudige en leesbare procedurele syntax om infrastructuur te configureren en servers te deployen met behulp van SSH (Jeff Geerling). Zogenaamde ‘playbooks’ worden gebruikt om een of meerdere servers tegelijkertijd op te zetten of te configureren. Het speciale hierbij is dat deze playbooks idempotent zijn. Dat betekent dat playbooks meerde keren uitgevoerd kunnen worden, maar er geen wijziging zal plaatsvinden totdat men effectief iets veranderd heeft. Ansible heeft als voordeel dat er geen additionele software op servers moet geïnstalleerd worden, omdat men werkt met SSH om alle infrastructuur te configureren. \\
+Terraform is heel gelijkaardig aan Ansible en werd ontwikkeld door HashiCorp. Er wordt gebruik gemaakt van de declaratieve HashiCorp Configuration Language (HCL) of JSON om infrastructuur te configureren en beheren. Terraform is eveneens idempotent gebruikt een 'state file' om veranderingen over tijd bij te houden, wat het gemakkelijker maakt om veranderingen te volgen of terug te draaien. Wanneer veranderingen aangebracht worden, creëert Terraform een plan om het gewenste doel te bereiken. \\
+Hoewel Ansible en Terraform op het eerste zicht beiden IaC tools lijken, worden ze in de praktijk vaak samen gebruikt, omdat elke tool zijn eigen sterke en zwakke punten heeft. Terraform wordt voornamelijk gebruikt voor het beheer van infrastructuur, terwijl Ansible hoofdzakelijk wordt gebruikt voor het installeren en configuren van software wanneer de infrastructuur reeds is opgezet (https://spacelift.io/blog/ansible-vs-terraform). Terraform fungeert dus meer als een orchestration tool, terwijl Ansible een configuratiemanagementtool is. \\
+De uitdaging is nu om deze tools optimaal samen te gebruiken. Hoewel beide tools in essentie dezelfde functionaliteit bezitten, worden ze op een verschillende manier geïmplementeerd. Er zijn studies uitgevoerd naar de implementatie van zowel Terraform als Ansible, maar de conclusies zijn nooit consistent (Gurbatov). Het is belangrijk om best practices te ontwikkelen voor het gezamenlijk gebruik van Terraform en Ansible, waarbij Terraform meer wordt ingezet voor provisioning en Ansible beter is voor configuratiemanagement. Het is cruciaal om de sterke en zwakke punten van zowel Terraform als Ansible grondig te analyseren om zo een optimale strategie te ontwikkelen voor hun gecombineerde gebruik. Deze aanpak stelt ons in staat om weloverwogen keuzes te maken over welke tool het beste ingezet kan worden voor specifieke taken binnen het spectrum van provisioning en configuratiemanagement. \\
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
-
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
-
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
-
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
-
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+Aanvankelijk zal een uitvoerige comparatieve literatuurstudie worden uitgevoerd om de voor- en nadelen van zowel Terraform als Ansible te identificeren. Deze studie is essentieel om een theoretische basis te leggen voor de daaropvolgende empirische onderzoeksfase. Vervolgens zal de implementatie van Terraform en Ansible getoetst worden via een Proof of Concept, gebruikmakend van virtuele machines binnen een gecontroleerde testomgeving. Het primaire doel van dit praktijkgerichte onderzoek is het identificeren van potentiële valkuilen van beide tools, alsook het beoordelen van hun vermogen om specifieke functionaliteiten uit te voeren, al dan niet op een meer effectieve wijze dan de andere tool. Deze aanpak stelt ons in staat om niet alleen de theoretische capaciteiten van beide systemen te begrijpen, maar ook hun praktische toepasbaarheid en efficiëntie in realistische IT-scenario's.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
-
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
-
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+In het kader van dit onderzoek worden enkele hypothesen gesteld. Deze hypothesen zijn gebaseerd op analyse van de voorafgaande literatuur.
+Ten eerste wordt verondersteld dat Ansible een hogere efficiëntie zal vertonen dan Terraform bij het uitvoeren van configuratietaken binnen bestaande infrastructuur. Om deze hypothese te toetsen, wordt voorgesteld om de benodigde tijd te meten die noodzakelijk is om configuratietaken uit te voeren met beide tools. Daarnaast zal de complexiteit van de implementatie op een kwalitatieve manier geëvalueerd worden door verschillende case studies en de eigen PoC te analyseren.
+Vervolgens wordt verwacht dat Terraform een superieure tool is ten opzichte van Ansible wat betreft het provisioneren van infrastructuur. Deze hypothese wordt getest door het succespercentage van infrastructuurdeployments die worden uitgevoerd met beide tools te vergelijken met elkaar.
+Daarnaast biedt dit onderzoek een grote meerwaarde voor bedrijven bij het efficiënter beheren van hun IT-infrastructuur. De verworven inzichten kunnen een concurrentievoordeel opleveren en de bedrijfsefficiëntie vergroten. Inzicht in de potentiële valkuilen en de uitdagingen geassocieerd met het gebruik van Terreform en Ansible zal bedrijven in staat stellen om risico’s bij de implementatie van hun infrastructuur te minimaliseren.
+Het is echter van belang te benadrukken dat, hoewel de hypthesen zijn gebaseerd op uitgebreid vooronderzoek, de daadwerkelijke onderzoeksresultaten significant kunnen verschillen van de verwachte resultaten. In het geval dat de uit uiteindelijke resultaten significant afwijken van de vooropgestelde hypotheses, zal het onderzoek desondanks nog steeds van grote waarde zijn. De nieuwe inzichten en de ontwikkelde best practices die uit dit onderzoek voortvloeien dragen bij aan een meer geïnformeerde en strategische benadering van IT-infrastructuurbeheer binnen bedrijven.
 
